@@ -28,3 +28,7 @@ C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\bin\Debug\EntityFramewo
 C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\obj\Debug\bookstore1pf_Content.g.cs
 C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\obj\Debug\bookstor.5315B60D.Up2Date
+C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\obj\Debug\OrderPage.g.cs
+C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\obj\Debug\OrderPage.baml
+C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\obj\Debug\OrderEditing.g.cs
+C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\obj\Debug\OrderEditing.baml

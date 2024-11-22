@@ -17,6 +17,7 @@ namespace bookstore1pf
         public int id { get; set; }
         public Nullable<int> order_id { get; set; }
         public Nullable<int> book_id { get; set; }
+        public int Amount { get; set; }
     
         public virtual Books Books { get; set; }
         public virtual Orders Orders { get; set; }

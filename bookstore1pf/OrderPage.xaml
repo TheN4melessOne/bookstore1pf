@@ -13,14 +13,27 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="1" x:Name="mainTable" Height="300" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+        <DataGrid Margin="10 0 0 0" Grid.Column="0" x:Name="mainTable" Height="300" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Binding="{Binding title}" Width="Auto"/>
                 <DataGridTextColumn Header="Автор" Binding="{Binding author}" Width="Auto"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding description}" Width="100"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding price}" Width="Auto"/>
                 <DataGridTextColumn Header="Издательство" Binding="{Binding publishingHouse}" Width="Auto"/>
-                <DataGridTextColumn Header="Описание" Binding="{Binding description}" Width="200"/>
                 <DataGridTextColumn Header="Год издания" Binding="{Binding publicationDate}" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel VerticalAlignment="Center" Grid.Column="1" Margin="20 0 0 0">
+            <TextBlock Text="Выберите пункт выдачи заказов"></TextBlock>
+            <ComboBox x:Name="ComboPoint" Margin="0 0 0 10"></ComboBox>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBlock Text="Итого: "></TextBlock>
+                <TextBlock x:Name="SumBlock"></TextBlock>
+            </StackPanel>
+            <Button x:Name="CartButton" Content="Добавить в корзину" Click="CartButton_Click" Margin="0 0 0 10"></Button>
+            <Button x:Name="Remove" Content="Убрать из корзины" Click="Remove_Click"  Margin="0 0 0 10"></Button>
+            <Button x:Name="CreateOrder" Content="Оформить заказ" Click="CreateOrder_Click" Margin="0 0 0 10"></Button>
+            <Button x:Name="GoBack" Content="Выйти" Click="GoBack_Click"></Button>
+        </StackPanel>
     </Grid>
 </Page>

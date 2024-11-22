@@ -19,8 +19,9 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Binding="{Binding title}" Width="Auto"/>
                 <DataGridTextColumn Header="Автор" Binding="{Binding author}" Width="Auto"/>
-                <DataGridTextColumn Header="Издательство" Binding="{Binding publishingHouse}" Width="Auto"/>
                 <DataGridTextColumn Header="Описание" Binding="{Binding description}" Width="200"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding price}" Width="Auto"/>
+                <DataGridTextColumn Header="Издательство" Binding="{Binding publishingHouse}" Width="Auto"/>
                 <DataGridTextColumn Header="Год издания" Binding="{Binding publicationDate}" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>

@@ -56,9 +56,29 @@ namespace bookstore1pf
 
             if (newUser != null)
             {
+                switch(newUser.roleId)
+                {
+                    case 1://administrator
+                        {
+                            break;
+                        }
+                    case 2://moderator
+                        {
+                            OrderEditing orderEditing = new OrderEditing();
+                            NavigationService.Navigate(orderEditing);
+                            App.UserId = newUser.id;
+                            break;
+                        }
+                    case 3://customer
+                        {
+                            tablePage newtablePage = new tablePage();
+                            NavigationService.Navigate(newtablePage);
+                            App.UserId = newUser.id;
+                            break;
+                        }
+                    default: { break; }
+                }
                 MessageBox.Show("Авторизация прошла успешно", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-                tablePage newtablePage = new tablePage(newUser);
-                NavigationService.Navigate(newtablePage);
             }
             else 
             {

@@ -34,10 +34,16 @@ namespace bookstore1pf
 
         private void forward_Click(object sender, RoutedEventArgs e)
         {
+            /*if (DBcontext.Order_composition.Count() != 0)
+            {
+                DBcontext.Order_composition.Remove(DBcontext.Order_composition.First());
+                DBcontext.SaveChanges();
+            }*/
+
             Users newUser = DBcontext.Users.ToList().Find(x => x.userPassword == "покупатель");
-            tablePage newtablePage = new tablePage(newUser);
+            tablePage newtablePage = new tablePage();
+            App.UserId = 3;
             NavigationService.Navigate(newtablePage);
-            //this.NavigationService.Navigate(new Uri("tablePage.xaml", UriKind.Relative));
         }
     }
 }

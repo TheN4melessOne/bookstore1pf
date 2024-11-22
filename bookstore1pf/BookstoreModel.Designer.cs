@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\DBModel.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\Nameless\source\repos\bookstore1pf\bookstore1pf\BookstoreModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

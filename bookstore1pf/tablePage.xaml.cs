@@ -31,24 +31,14 @@ namespace bookstore1pf
         Users pageUser;
 
         //string connectionString = "data source=DESkTOP-THCE3F8;initial catalog=Bookstore3;integrated security=True;trustservercertificate=True";
-        public tablePage(Users pageUser1)
-        {
-            InitializeComponent();
-            selectedBooks = new List<TableBook>();
-            CreateOrder.Visibility = Visibility.Collapsed;
-            ExitTheCart.Visibility = Visibility.Collapsed;
-            pageUser = pageUser1;
-            CreateTable();
-            //MessageBox.Show($"Ваше имя - {pageUser.userLogin}");
-        }
-
         public tablePage()
         {
             InitializeComponent();
-            CreateTable();
             selectedBooks = new List<TableBook>();
             CreateOrder.Visibility = Visibility.Collapsed;
             ExitTheCart.Visibility = Visibility.Collapsed;
+            CreateTable();
+            //MessageBox.Show($"Ваше имя - {pageUser.userLogin}");
         }
 
         void CreateTable()
@@ -61,7 +51,7 @@ namespace bookstore1pf
                                 .Include(b => b.Publishing_houses)
                                 .Include(b => b.Genres)
                                 .ToList();
-
+            
             booksView = new ObservableCollection<TableBook>();
             foreach (var book in books)
             {
@@ -72,7 +62,9 @@ namespace bookstore1pf
                     book.Authors.last_name + " " + book.Authors.patronymic + " " + book.Authors.pseudonym,
                     publishingHouse = book.Publishing_houses.PublisingHouseName,
                     description = book.bookDescription,
-                    publicationDate = book.publication_date.ToString()
+                    publicationDate = book.publication_date.ToString(),
+                    id = book.id,
+                    price = book.Price.ToString()
                 });
             }
 
@@ -132,7 +124,7 @@ namespace bookstore1pf
             {
                 foreach (var n in mainTable.SelectedItems.Cast<TableBook>())
                 {
-                    selectedBooks.Remove(selectedBooks.Find(s => s.title == n.title));
+                    selectedBooks.Remove(selectedBooks.Find(s => s.id == n.id));
                 }
             }
             else

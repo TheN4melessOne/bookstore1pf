@@ -176,3 +176,12 @@ VALUES
 INSERT INTO Genres_of_books (book_id, genre_id)
 VALUES
 (2, 3);
+
+ALTER TABLE Users
+ADD CONSTRAINT UQ_Order_login UNIQUE (userLogin);
+
+ALTER TABLE Order_composition
+ADD Amount int NOT NULL DEFAULT 1;
+
+ALTER TABLE Books
+ADD Price int NOT NULL DEFAULT 0;

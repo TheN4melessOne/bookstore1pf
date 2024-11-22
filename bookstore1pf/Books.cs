@@ -28,6 +28,7 @@ namespace bookstore1pf
         public Nullable<System.DateTime> publication_date { get; set; }
         public string image_Path { get; set; }
         public string bookDescription { get; set; }
+        public int Price { get; set; }
     
         public virtual Authors Authors { get; set; }
         public virtual Publishing_houses Publishing_houses { get; set; }

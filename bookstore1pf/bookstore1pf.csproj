@@ -66,68 +66,71 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Authors.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Books.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookstoreModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookstoreModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookstoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookstoreModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Cities.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Customers.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.edmx</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Genres.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderEditing.xaml.cs">
+      <DependentUpon>OrderEditing.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Orders.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Order_composition.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="order_pick_up_points.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Publishing_houses.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="registrationPage1.xaml.cs">
       <DependentUpon>registrationPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Roles.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="startPage.xaml.cs">
       <DependentUpon>startPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Statuses.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TableBook.cs" />
     <Compile Include="tablePage.xaml.cs">
       <DependentUpon>tablePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>BookstoreModel.tt</DependentUpon>
     </Compile>
     <Page Include="authorization.xaml">
       <SubType>Designer</SubType>
@@ -148,6 +151,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OrderEditing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -183,12 +190,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DBModel.edmx">
+    <EntityDeploy Include="BookstoreModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>BookstoreModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBModel.edmx.diagram">
-      <DependentUpon>DBModel.edmx</DependentUpon>
+    <None Include="BookstoreModel.edmx.diagram">
+      <DependentUpon>BookstoreModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -200,19 +207,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBModel.Context.cs</LastGenOutput>
-      <DependentUpon>DBModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="DBModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBModel.edmx</DependentUpon>
-      <LastGenOutput>DBModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="BookstoreModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookstoreModel.edmx</DependentUpon>
+      <LastGenOutput>BookstoreModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BookstoreModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookstoreModel.edmx</DependentUpon>
+      <LastGenOutput>BookstoreModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

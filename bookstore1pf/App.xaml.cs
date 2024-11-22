@@ -13,5 +13,6 @@ namespace bookstore1pf
     /// </summary>
     public partial class App : Application
     {
+        public static int UserId { get; set;}
     }
 }

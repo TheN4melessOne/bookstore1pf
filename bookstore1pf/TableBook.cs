@@ -14,6 +14,9 @@ namespace bookstore1pf
         public string description { get; set; }
         public string publicationDate { get; set; }
 
+        public int id { get; set; }
+        public string price { get; set; }
+
         public Books parentBook { get; set; }
     }
 }
