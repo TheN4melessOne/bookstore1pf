@@ -1,0 +1,178 @@
+USE Bookstore3;
+
+CREATE TABLE Cities
+(id int IDENTITY,
+city_name varchar(100) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE Genres (
+id int IDENTITY,
+genre_name varchar(100) NOT NULL
+PRIMARY KEY(id));
+
+CREATE TABLE Statuses (
+id int IDENTITY,
+status_name varchar(100) NOT NULL
+PRIMARY KEY(id));
+
+CREATE TABLE Authors (
+id int IDENTITY PRIMARY KEY,
+first_name varchar(100),
+last_name varchar(100),
+patronymic varchar(100),
+pseudonym varchar(100),
+date_of_birth date,
+city_id int,
+FOREIGN KEY (city_id) REFERENCES Cities (id));
+
+CREATE TABLE Publishing_houses (
+id int PRIMARY KEY IDENTITY,
+city_id int,
+FOREIGN KEY (city_id) REFERENCES Cities (id));
+
+CREATE TABLE Customers (
+id int PRIMARY KEY,
+first_name varchar(100),
+last_name varchar(100),
+patronymic varchar(100),
+date_of_birth date,
+subscription bit DEFAULT 0);
+
+CREATE TABLE order_pick_up_points (
+id int IDENTITY PRIMARY KEY,
+phone_number varchar(40),
+city_id int,
+FOREIGN KEY (city_id) REFERENCES Cities (id));
+
+CREATE TABLE Books (
+id int IDENTITY PRIMARY KEY,
+title varchar(500),
+author_id int,
+publishing_house_id int,
+publication_date DATE,
+FOREIGN KEY (author_id) REFERENCES Authors (id),
+FOREIGN KEY (publishing_house_id) REFERENCES Publishing_houses (id));
+
+CREATE TABLE Genres_of_books (
+book_id int,
+genre_id int,
+FOREIGN KEY (book_id) REFERENCES Books (id),
+FOREIGN KEY (genre_id) REFERENCES Genres (id),
+PRIMARY KEY (book_id, genre_id));
+
+CREATE TABLE Orders (
+id int PRIMARY KEY IDENTITY,
+date_of_the_order date,
+order_pick_up_point_id int,
+customer_id int,
+status_id int,
+FOREIGN KEY (order_pick_up_point_id) REFERENCES order_pick_up_points (id),
+FOREIGN KEY (customer_id) REFERENCES Customers (id),
+FOREIGN KEY (status_id) REFERENCES Statuses (id));
+
+CREATE TABLE Order_composition (
+id int PRIMARY KEY IDENTITY, 
+order_id int,
+book_id int,
+FOREIGN KEY (order_id) REFERENCES Orders (id),
+FOREIGN KEY (book_id) REFERENCES Books (id));
+
+ALTER TABLE Books 
+ADD image_Path nvarchar(150);
+
+ALTER TABLE Books
+ADD bookDescription nvarchar(MAX);
+
+CREATE TABLE Roles (id int IDENTITY PRIMARY KEY,
+roleName NVARCHAR(50));
+
+CREATE TABLE Users (
+id int IDENTITY PRIMARY KEY,
+roleId int,
+userLogin NVARCHAR(50),
+userPassword NVARCHAR(50));
+
+ALTER TABLE Users
+ADD FOREIGN KEY (roleId) REFERENCES Roles (id);
+
+ALTER TABLE Publishing_houses
+ADD PublisingHouseName NVARCHAR(150);
+
+INSERT INTO Cities (city_name) VALUES
+('Москва'),('Портсмут'),
+('Торнтон'),('Мотихари');
+
+INSERT INTO Publishing_houses (city_id, PublisingHouseName)
+VALUES(1, 'Азбука-Аттикус'),
+(1, 'Эксмо'),
+(1, 'АСТ');
+
+INSERT INTO Authors (first_name, last_name, patronymic, pseudonym, date_of_birth, city_id)
+VALUES('Чарльз', 'Диккенс', null, null, '1812-02-07', 2),
+('Шарлотта', 'Бронте', null, null, '1816-04-21', 3),
+(null, null, null, 'Джордж Оруэлл', '1903-06-25', 4);
+
+INSERT INTO Books (title, author_id, publishing_house_id, publication_date, bookDescription)
+VALUES('Большие надежды', 1, 1, '2024-01-01', 'Чарльз Диккенс — один из самых известных английских романистов, искусный рассказчик и публицист, чье творчество является целой эпохой в развитии мировой литературы. По словам Л. Н. Толстого, «его книги, проникнутые истинно христианским духом, принесли и будут продолжать приносить очень много добра человечеству». В романе «Большие надежды», шедевре Диккенса, рассказана история молодого Филиппа Пиррипа по прозвищу Пип. Мечты Пипа о карьере, любви и благополучии в «мире джентльменов» разбиваются в один миг, когда он узнает страшную тайну своего неизвестного покровителя, преследуемого полицией. Куда же заведут героя его большие надежды?'),
+('Джейн Эйр', 2, 2, '2018-01-01', 'Готическое поместье, любовь, покушение на убийство, сумасшедшая супруга главного героя, запертая на чердаке, - в самом известном романе Шарлотты Бронте "Джейн Эйр".'),('Тайна Эдвина Друда', 1, 3, '2022-01-01', 'Одно из самых загадочных произведений мировой литературы, входящее в культовый американский список «100 лучших детективных романов всех времен». Последний роман Диккенса, так и оставшийся, увы, незаконченным. И вот уже почти полтора столетия литературоведы и просто любители, исследователи творчества великого английского писателя, его современные собратья по перу и даже полицейские детективы бьются над вопросом: каким же должно быть окончание этого романа? Так кто же убил богатого наследника Эдвина Друда? Дядюшка-наркоман Джаспер – завсегдатай опиумной курильни мрачной Старухи? Или главный подозреваемый полиции – выросший на Цейлоне Невил Ландлес, безумно влюбленный в невесту Эдвина Розу? Да и вообще, был ли Друд, тела которого так и не нашли, действительно убит?'),
+('1984', 3, 3, '2024-01-01', 'Великая антиутопия XX века с иллюстрациями знаменитого аргентинского художника Луиса Скафати, которому пришлось в реальном мире столкнуться с ужасами, описанными Джорджем Оруэллом. Личный взгляд художника открывает культовый роман с новой стороны.');
+
+SELECT Books.id, Books.title, Books.publication_date,
+Authors.first_name, Authors.last_name, Authors.patronymic, Authors.pseudonym, Authors.date_of_birth, Publishing_houses.PublisingHouseName, Cities.city_name
+FROM Books JOIN Authors ON Authors.id = Books.author_id 
+JOIN Publishing_houses ON Publishing_houses.id = Books.publishing_house_id
+JOIN Cities ON Cities.id = Publishing_houses.city_id;
+
+ALTER TABLE Customers
+ADD FOREIGN KEY (id) REFERENCES Users (id);
+
+INSERT INTO Roles (roleName)
+VALUES
+('Администратор'),
+('Модератор'),
+('Покупатель');
+
+INSERT INTO Users (roleId, userLogin, userPassword)
+VALUES
+(1, 'администратор', 'администратор'),
+(2, 'модератор', 'модератор'),
+(3, 'покупатель', 'покупатель');
+
+INSERT INTO Customers
+VALUES 
+(3, 'Иванов', 'Алексей', 'Игоревич', '2009-01-02', 0);
+
+USE Bookstore3;
+
+INSERT INTO Statuses (status_name)
+VALUES
+('оформлен'),
+('собран на складе'),
+('отправлен'),
+('доставлен в пункт выдачи'),
+('принят'),
+('возвращен');
+
+INSERT INTO Cities (city_name)
+VALUES 
+('Тамбов'),
+('Саратов'),
+('Астрахань');
+
+INSERT INTO order_pick_up_points (phone_number, city_id)
+VALUES
+('8888888888', 1),
+('9999999999', 5),
+('1111111111', 6);
+
+INSERT INTO Genres (genre_name)
+VALUES
+('комедия'),
+('трагедия'),
+('драма'),
+('ужасы');
+
+INSERT INTO Genres_of_books (book_id, genre_id)
+VALUES
+(2, 3);

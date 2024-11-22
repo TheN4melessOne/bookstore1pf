@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bdcee0ac53a7416f980eb6b3f8b8c282" Name="Diagram1">
+        <EntityTypeShape EntityType="Bookstore3Model.Authors" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Books" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Cities" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Customers" Width="1.5" PointX="6" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Genres" Width="1.5" PointX="7.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Order_composition" Width="1.5" PointX="10.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.order_pick_up_points" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Orders" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Publishing_houses" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Roles" Width="1.5" PointX="1.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Statuses" Width="1.5" PointX="6" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bookstore3Model.Users" Width="1.5" PointX="3.75" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="Bookstore3Model.FK__Authors__city_id__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Books__author_id__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Books__publishin__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Order_com__book___4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__order_pic__city___32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Publishin__city___2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Customers__id__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Orders__customer__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Order_com__order__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Orders__order_pi__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Orders__status_i__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.FK__Users__roleId__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="Bookstore3Model.Genres_of_books" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
