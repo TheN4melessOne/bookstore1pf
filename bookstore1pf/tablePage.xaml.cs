@@ -83,6 +83,8 @@ namespace bookstore1pf
                 mainTable.ItemsSource = null;
                 mainTable.ItemsSource = selectedBooks;
             }
+
+            mainTable.SelectedItem = null;
         }
 
         private void GoToCart_Click(object sender, RoutedEventArgs e)
@@ -137,6 +139,7 @@ namespace bookstore1pf
                 mainTable.ItemsSource = null;
                 mainTable.ItemsSource = selectedBooks;
             }
+            mainTable.SelectedItem = null;
         }
     }
 }

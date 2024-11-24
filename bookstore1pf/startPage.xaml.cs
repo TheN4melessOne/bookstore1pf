@@ -24,6 +24,7 @@ namespace bookstore1pf
         public startPage()
         {
             InitializeComponent();
+            registration.Visibility = Visibility.Collapsed;
         }
 
         private void registration_Click(object sender, RoutedEventArgs e)

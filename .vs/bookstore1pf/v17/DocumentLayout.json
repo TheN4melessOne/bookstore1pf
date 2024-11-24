@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|c:\\users\\nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\orderediting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\orderediting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|solutionrelative:bookstore1pf\\orderediting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|c:\\users\\nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\orderediting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|solutionrelative:bookstore1pf\\orderediting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|c:\\users\\nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\authorization.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|solutionrelative:bookstore1pf\\authorization.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\tablepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|solutionrelative:bookstore1pf\\tablepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|c:\\users\\nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\tablepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0AF860FD-9494-4DF0-B204-89BCA4B8EA02}|bookstore1pf\\bookstore1pf.csproj|solutionrelative:bookstore1pf\\tablepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "authorization.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\authorization.xaml.cs",
-              "RelativeDocumentMoniker": "bookstore1pf\\authorization.xaml.cs",
-              "ToolTip": "C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\authorization.xaml.cs",
-              "RelativeToolTip": "bookstore1pf\\authorization.xaml.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAywEQAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T19:56:35.66Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -65,34 +40,9 @@
               "RelativeDocumentMoniker": "bookstore1pf\\OrderEditing.xaml.cs",
               "ToolTip": "C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\OrderEditing.xaml.cs",
               "RelativeToolTip": "bookstore1pf\\OrderEditing.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAsAAAA",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAqwJUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T19:37:57.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "tablePage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\tablePage.xaml.cs",
-              "RelativeDocumentMoniker": "bookstore1pf\\tablePage.xaml.cs",
-              "ToolTip": "C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\tablePage.xaml.cs",
-              "RelativeToolTip": "bookstore1pf\\tablePage.xaml.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAABoAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T19:39:26.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "tablePage.xaml",
-              "DocumentMoniker": "C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\tablePage.xaml",
-              "RelativeDocumentMoniker": "bookstore1pf\\tablePage.xaml",
-              "ToolTip": "C:\\Users\\Nameless\\source\\repos\\bookstore1pf\\bookstore1pf\\tablePage.xaml",
-              "RelativeToolTip": "bookstore1pf\\tablePage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-21T03:44:15.237Z",
               "EditorCaption": ""
             }
           ]

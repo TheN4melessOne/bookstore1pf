@@ -49,6 +49,7 @@ namespace bookstore1pf
 
         private void Authorization_Click(object sender, RoutedEventArgs e)
         {
+
             login = loginBox.Text;
             password = passwordBox.Text;
 
@@ -60,11 +61,14 @@ namespace bookstore1pf
                 {
                     case 1://administrator
                         {
+                            OrderEditing orderEditing = new OrderEditing(1);
+                            NavigationService.Navigate(orderEditing);
+                            App.UserId = newUser.id;
                             break;
                         }
                     case 2://moderator
                         {
-                            OrderEditing orderEditing = new OrderEditing();
+                            OrderEditing orderEditing = new OrderEditing(2);
                             NavigationService.Navigate(orderEditing);
                             App.UserId = newUser.id;
                             break;

@@ -10,12 +10,47 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" x:Name="OrderTable" Height="auto" Margin="0 0 0 20">
-        </DataGrid>
-        <DataGrid Grid.Row="1" x:Name="OrderCompositionTable" Height="auto">
-        </DataGrid>
+        <StackPanel VerticalAlignment="Top" Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <DataGrid SelectionMode="Single" x:Name="OrderTable" Height="auto" Margin="0 0 20 20" AutoGenerateColumns="False" Width="auto" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID заказа" Binding="{Binding id}" Width="Auto"/>
+                        <DataGridTextColumn Header="Дата" Binding="{Binding date}" Width="Auto"/>
+                        <DataGridTextColumn Header="Пункт выдачи заказов" Binding="{Binding orderPoint}" Width="Auto"/>
+                        <DataGridTextColumn Header="ID покупателя" Binding="{Binding customerId}" Width="Auto"/>
+                        <DataGridTextColumn Header="Статус заказа" Binding="{Binding status}" Width="Auto"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Width="auto" HorizontalAlignment="Right" Margin="20 0 0 0">
+                    <ComboBox x:Name="ComboPoints" Margin="0 0 0 10"></ComboBox>
+                    <ComboBox x:Name="ComboStatuses" Margin="0 0 0 10"></ComboBox>
+                    <Button x:Name="EditOrder" Content="Редактировать" Click="EditOrder_Click" Margin="0 0 0 10"></Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <DataGrid SelectionMode="Single" x:Name="OrderCompositionTable" Height="auto" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID записи о составе заказа" Binding="{Binding id}" Width="Auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="ID заказа" Binding="{Binding orderId}" Width="Auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Название книги" Width="Auto" Binding="{Binding bookName}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Количество" Width="Auto" Binding="{Binding amount}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+                
+            <StackPanel Width="auto" Margin="20 0 0 0">
+                <ComboBox x:Name="ComboTitle" Margin="0 0 0 10"></ComboBox>
+                <TextBox x:Name ="BoxAmount" TextChanged="BoxAmount_TextChanged" Margin="0 0 0 10"></TextBox>
+                <Button x:Name="EditComp" Content="Редактировать" Click="EditComp_Click" Margin="0 0 0 10"></Button>
+            </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Margin="0 20 0 20">
+            <Button x:Name="Save" Content="Сохранить изменения" Click="Save_Click" Margin="0 0 10 0"></Button>
+            <Button x:Name="Delete" Content="Удалить" Click="Delete_Click" Margin="0 0 10 0"></Button>
+            <Button x:Name="GoBack" Content="Назад" Click="GoBack_Click" Margin="0 0 10 0"></Button>
+        </StackPanel>
     </Grid>
 </Page>

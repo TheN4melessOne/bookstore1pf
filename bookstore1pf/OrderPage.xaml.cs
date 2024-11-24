@@ -34,14 +34,17 @@ namespace bookstore1pf
             selectedBooks = selectedBooks1;
             mainTable.ItemsSource = selectedBooks;
 
-            var datacontext = DBcontext.Cities.ToList();
+            var datacontext = DBcontext.order_pick_up_points
+                .Include(o => o.Cities)
+                .ToList();
+
             List<string> ComboItems = new List<string>();
-            foreach (Cities city in datacontext)
+            foreach (order_pick_up_points point in datacontext)
             {
-                ComboItems.Add(city.city_name);
+                ComboItems.Add(point.Cities.city_name);
             }
             ComboPoint.ItemsSource = ComboItems;
-            
+
             OrderSum = 0;
             foreach (TableBook selected in selectedBooks)
             {
